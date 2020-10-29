@@ -1,0 +1,50 @@
+# ��������
+---
+server:
+  port: 10005
+  servlet:
+    context-path: /
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: mdm-gateway
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  cloud:
+    gateway:
+      routes:
+#        - uri: http://httpbin.org:80
+#          predicates:
+#            - Path=/test
+#          filters:
+#            - StripPrefix=1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://111.229.226.200:3306/frame
+    username: root
+    password: delaynomore
+    hikari:
+      minimum-idle: 0
+      maximum-pool-size: 1000
+      idle-timeout: 30000
+      pool-name: SmopCP
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      connection-test-query: select 1
+gateway:
+  custom:
+    password: mdm@himarking
+    ignored-path:
+      - /gw/**
+      - /oauth/**

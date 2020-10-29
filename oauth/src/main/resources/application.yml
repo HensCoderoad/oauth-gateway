@@ -1,0 +1,26 @@
+server:
+  port: 10001
+  servlet:
+    context-path: /
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://111.229.226.200:3306/frame
+    username: root
+    password: delaynomore
+    hikari:
+      minimum-idle: 0
+      maximum-pool-size: 1000
+      idle-timeout: 30000
+      pool-name: SmopCP
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      connection-test-query: select 1
+jwt:
+  password: oauth-gateway
+
