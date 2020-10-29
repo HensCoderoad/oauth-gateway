@@ -10,9 +10,9 @@ spring:
       ddl-auto: update
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://111.229.226.200:3306/frame
-    username: root
-    password: delaynomore
+    url:
+    username: 
+    password:
     hikari:
       minimum-idle: 0
       maximum-pool-size: 1000
